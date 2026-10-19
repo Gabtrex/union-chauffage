@@ -372,7 +372,7 @@
       if (!FORM_ENDPOINT) {
         const corps = `Nom : ${data.nom}\nTéléphone : ${data.telephone}\nE-mail : ${data.email || "-"}\nCommune : ${data.commune}\nProjet : ${data.projet}\n\n${data.message || ""}`;
         window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Demande de devis : " + data.projet)}&body=${encodeURIComponent(corps)}`;
-        status.textContent = "Votre messagerie s'ouvre avec la demande déjà remplie : il ne reste qu'à l'envoyer.";
+        status.textContent = "Votre messagerie s'ouvre avec la demande déjà remplie : il ne reste qu'à l'envoyer. Rien ne s'ouvre ? Appelez le 07 87 78 84 08 ou écrivez à " + CONTACT_EMAIL + ".";
         return;
       }
 
