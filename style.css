@@ -78,7 +78,7 @@ p { margin: 0; }
   font-size: 19px; letter-spacing: -.01em;
   text-decoration: none; white-space: nowrap;
 }
-.logo-mark { width: 26px; height: 26px; flex: none; }
+.logo-mark { width: 32px; height: 32px; flex: none; } /* flamme du logo Union Chauffage */
 .nav { display: flex; gap: 24px; margin-left: auto; }
 .nav a { text-decoration: none; font-weight: 550; color: var(--slate); }
 .nav a:hover { color: var(--ink); }
@@ -187,16 +187,11 @@ p { margin: 0; }
 .jobs { list-style: none; padding: 0; margin: 48px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 24px; }
 .job figure { margin: 0; }
 .job-photo {
-  position: relative; aspect-ratio: 4 / 3; border-radius: 10px;
-  display: grid; place-items: center;
-}
-.job-warm .job-photo { background: var(--flame-tint); color: var(--flame-text); }
-.job-cool .job-photo { background: var(--frost-tint); color: var(--frost-dark); }
-.job-photo svg { width: 38%; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.photo-tag {
-  position: absolute; top: 12px; left: 12px;
-  font-size: 12px; font-weight: 600; color: var(--slate);
-  background: rgba(255, 255, 255, .85); border-radius: 4px; padding: 3px 8px;
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 1 / 1;      /* photos carrées */
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--frost-tint); /* fond pendant le chargement */
 }
 .job figcaption { margin-top: 12px; font-weight: 650; }
 
@@ -254,7 +249,6 @@ p { margin: 0; }
   .btn-call { margin-left: auto; }
   .hero { padding: 40px 0 16px; }
   .hero-grid, .reviews, .contact { grid-template-columns: 1fr; gap: 44px; }
-  .jobs { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr 1fr; gap: 40px 32px; }
   .steps li::after { display: none; }
 }
@@ -275,9 +269,7 @@ p { margin: 0; }
   .steps { grid-template-columns: 1fr; gap: 28px; }
   .steps li { display: grid; grid-template-columns: 54px 1fr; column-gap: 18px; }
   .steps li::before { grid-row: span 2; margin: 0; }
-  .jobs { grid-template-columns: 1fr 1fr; gap: 20px 14px; }
-  .job figcaption { font-size: 15px; }
-  .photo-tag { font-size: 11px; top: 8px; left: 8px; }
+  .jobs { grid-template-columns: 1fr; gap: 24px; }
   .field-row { grid-template-columns: 1fr; }
   #quote-form .btn { justify-self: stretch; }
   .contact-info { padding: 28px 22px; }
