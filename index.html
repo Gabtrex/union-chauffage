@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Union Chauffage - Chauffagiste RGE à Génicourt-sur-Meuse (55)</title>
+<meta name="description" content="Pompes à chaleur, chaudières à granulés, poêles, chauffe-eau thermodynamiques et salles de bain autour de Génicourt-sur-Meuse. Artisan RGE QualiPAC et Qualibois. Remplacement de chaudière fioul ou gaz : vous ne payez que le reste à charge.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+/* --- Tokens --- */
+:root {
+  --encre: #13283D;        /* deep ink blue: text, dark sections */
+  --encre-2: #1E3A55;      /* lighter ink for borders on dark */
+  --givre: #E8F1F6;        /* frost blue: light section background */
+  --braise: #C9480A;       /* ember orange: main buttons (white text passes AA) */
+  --braise-vif: #E8661F;   /* brighter ember for accents */
+  --ambre: #F6A93B;        /* amber: highlights on dark */
+  --acier: #4F6478;        /* secondary text */
+  --blanc: #FFFFFF;        /* page background */
+  --thermique: linear-gradient(100deg, #A9D3E8 0%, #DCEBF1 28%, #F7C47E 58%, #EE7C2E 82%, #CF450C 100%); /* cold to hot */
+  --max: 1180px;           /* content width */
+  --font: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* --- Base --- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font); font-size: 1.0625rem; line-height: 1.6; color: var(--encre); background: var(--blanc); }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; line-height: 1.08; font-stretch: 125%; font-weight: 800; letter-spacing: -.015em; }
+h2 { font-size: clamp(1.9rem, 3.8vw, 2.8rem); }
+h3 { font-size: 1.25rem; font-weight: 700; font-stretch: 112%; letter-spacing: 0; }
+p { margin: 0; }
+.wrap { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+.wrap > *, .devis-grid > * { min-width: 0; } /* let grid columns shrink below image widths */
+:focus-visible { outline: 3px solid var(--braise-vif); outline-offset: 3px; }
+
+/* --- Buttons --- */
+.btn { display: inline-flex; align-items: center; gap: .55rem; padding: .85rem 1.35rem; border-radius: 8px; font: 650 1rem var(--font); text-decoration: none; border: 2px solid transparent; cursor: pointer; transition: background-color .15s, border-color .15s; }
+.btn svg { width: 1.15em; height: 1.15em; flex: none; }
+.btn-feu { background: var(--braise); color: #fff; }
+.btn-feu:hover { background: #A93C08; }
+.btn-ligne { border-color: rgba(255,255,255,.55); color: #fff; }
+.btn-ligne:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+.btn-encre { background: var(--encre); color: #fff; }
+.btn-encre:hover { background: var(--encre-2); }
+
+/* --- Top bar & header --- */
+.topbar { background: var(--encre); color: rgba(255,255,255,.82); font-size: .9rem; }
+.topbar .wrap { display: flex; justify-content: space-between; gap: 1rem; padding-block: .45rem; }
+.topbar a { text-decoration: none; color: #fff; font-weight: 600; }
+.topbar .loin { display: flex; gap: 1.5rem; }
+header.site { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-bottom: 1px solid #DCE5EC; }
+header.site::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 4px; background: var(--thermique); }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .8rem; }
+.logo { white-space: nowrap; display: flex; align-items: center; gap: .55rem; text-decoration: none; font-weight: 800; font-stretch: 125%; font-size: 1.2rem; letter-spacing: -.01em; }
+.logo svg { width: 30px; height: 30px; }
+.nav { display: flex; align-items: center; gap: 1.5rem; font-weight: 550; font-size: .98rem; }
+.nav a:not(.btn) { text-decoration: none; }
+.nav a:not(.btn):hover { color: var(--braise); }
+.nav .btn { padding: .6rem 1.05rem; }
+
+/* --- Hero --- */
+.hero { background: var(--encre); color: #fff; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-block: clamp(3.5rem, 7vw, 6rem); }
+.hero h1 { font-size: clamp(2.3rem, 5.2vw, 4.1rem); }
+.hero .lead { margin-top: 1.4rem; font-size: 1.18rem; color: rgba(255,255,255,.85); max-width: 46ch; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.preuves { display: flex; flex-wrap: wrap; gap: 1.6rem; margin: 2.4rem 0 0; padding: 1.4rem 0 0; list-style: none; border-top: 1px solid var(--encre-2); }
+.preuves li { display: grid; line-height: 1.3; }
+.preuves b { font-size: 1.15rem; font-stretch: 112%; color: var(--ambre); }
+.preuves span { font-size: .92rem; color: rgba(255,255,255,.75); }
+.hero-photo { position: relative; }
+.hero-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; }
+.hero-photo::before { content: ""; position: absolute; inset: auto -14px -14px auto; width: 62%; height: 62%; border-radius: 14px; background: var(--thermique); z-index: 0; }
+.hero-photo img { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-photo::before { animation: chauffe 1.6s ease-out both .2s; }
+  @keyframes chauffe { from { opacity: 0; transform: translate(-24px, -24px); } }
+}
+
+/* --- Sections --- */
+section { padding-block: clamp(4rem, 8vw, 6.5rem); }
+.head { max-width: 46rem; margin-bottom: 2.8rem; }
+.head p { margin-top: .9rem; color: var(--acier); font-size: 1.12rem; }
+
+/* --- Reste à charge --- */
+.rac { background: var(--thermique); }
+.rac .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.rac h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+.rac .intro p { margin-top: 1rem; font-size: 1.15rem; max-width: 40ch; }
+.rac .intro .btn { margin-top: 1.8rem; }
+.etapes { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; counter-reset: e; }
+.etapes li { counter-increment: e; display: grid; grid-template-columns: 3.2rem 1fr; gap: 1rem; align-items: start; background: rgba(255,255,255,.88); border-radius: 12px; padding: 1.2rem 1.3rem; }
+.etapes li::before { content: counter(e); display: grid; place-items: center; width: 3.2rem; height: 3.2rem; border-radius: 50%; background: var(--encre); color: #fff; font-weight: 800; font-stretch: 125%; font-size: 1.3rem; }
+.etapes p { color: var(--acier); margin-top: .25rem; }
+
+/* --- Services --- */
+.services { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2.4vw, 1.8rem); }
+.service img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 10px; margin-bottom: 1rem; }
+.service p { color: var(--acier); margin-top: .4rem; font-size: 1rem; }
+.service .qualif { display: inline-block; margin-top: .7rem; font-size: .85rem; font-weight: 650; color: var(--braise); }
+.aussi { margin-top: clamp(2.5rem, 5vw, 3.5rem); display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 2px solid var(--encre); }
+.aussi div { padding: 1.2rem 1.2rem 1.2rem 0; border-bottom: 1px solid #DCE5EC; }
+.aussi div + div { padding-left: 1.2rem; border-left: 1px solid #DCE5EC; }
+.aussi p { color: var(--acier); font-size: .97rem; margin-top: .3rem; }
+
+/* --- RGE + avis --- */
+.confiance { background: var(--givre); }
+.confiance .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.labels { display: grid; gap: 1rem; margin-top: 1.8rem; }
+.label { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: center; background: #fff; border-radius: 12px; padding: 1.1rem 1.2rem; }
+.label .pastille { width: 3.4rem; height: 3.4rem; border-radius: 50%; display: grid; place-items: center; background: var(--encre); color: var(--ambre); font-weight: 800; font-size: .8rem; font-stretch: 112%; text-align: center; line-height: 1.05; }
+.label p { color: var(--acier); font-size: .97rem; }
+.note { background: var(--encre); color: #fff; border-radius: 16px; padding: clamp(1.6rem, 3vw, 2.4rem); }
+.note .chiffre { display: flex; align-items: baseline; gap: .6rem; }
+.note .chiffre b { font-size: clamp(4rem, 9vw, 6rem); font-weight: 800; font-stretch: 125%; line-height: 1; }
+.note .chiffre span { font-size: 1.4rem; color: rgba(255,255,255,.7); }
+.etoiles { display: flex; gap: .25rem; margin: .8rem 0 1.2rem; }
+.etoiles svg { width: 1.6rem; height: 1.6rem; fill: var(--ambre); }
+.note blockquote { margin: 1.4rem 0 0; padding: 1.2rem 0 0; border-top: 1px solid var(--encre-2); font-size: 1.3rem; font-stretch: 112%; font-weight: 600; }
+.note cite { display: block; margin-top: .5rem; font-style: normal; font-size: .92rem; font-weight: 400; color: rgba(255,255,255,.7); }
+.note .btn { margin-top: 1.6rem; }
+
+/* --- Chantiers --- */
+.galerie { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1rem; height: clamp(26rem, 48vw, 34rem); }
+.galerie figure { margin: 0; position: relative; overflow: hidden; border-radius: 10px; }
+.galerie figure:first-child { grid-row: span 2; }
+.galerie figure:last-child { grid-column: span 2; }
+.galerie img { width: 100%; height: 100%; object-fit: cover; }
+.galerie figcaption { position: absolute; left: .7rem; bottom: .7rem; background: rgba(19,40,61,.86); color: #fff; font-size: .9rem; font-weight: 550; padding: .3rem .7rem; border-radius: 6px; }
+.galerie-note { margin-top: 1rem; color: var(--acier); font-size: .95rem; }
+
+/* --- Zone --- */
+.zone .wrap { display: grid; grid-template-columns: 6fr 5fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.carte { width: 100%; max-width: 560px; justify-self: center; }
+.carte text { font-family: var(--font); }
+.villes { columns: 2; margin: 1.4rem 0 0; padding: 0; list-style: none; color: var(--acier); }
+.villes li { padding: .15rem 0; }
+.zone .eglise { margin-top: 1.8rem; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; }
+
+/* --- Devis --- */
+.devis { background: var(--encre); color: #fff; }
+.devis .head p { color: rgba(255,255,255,.78); }
+.devis-grid { display: grid; grid-template-columns: 7fr 4fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: start; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.2rem; }
+form label { display: grid; gap: .35rem; font-weight: 550; font-size: .97rem; }
+form .large { grid-column: 1 / -1; }
+input, select, textarea { font: inherit; font-weight: 400; padding: .7rem .8rem; border-radius: 8px; border: 1.5px solid #3A5874; background: #0F2133; color: #fff; }
+input::placeholder, textarea::placeholder { color: rgba(255,255,255,.45); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--ambre); }
+textarea { min-height: 7rem; resize: vertical; }
+.envoi { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: .4rem; }
+.envoi .btn { border: 0; }
+.statut { color: rgba(255,255,255,.75); font-size: .95rem; }
+.fiche { background: #fff; color: var(--encre); border-radius: 14px; padding: 1.6rem; }
+.fiche h3 { margin-bottom: .8rem; }
+.fiche .tel { display: block; font-size: 1.75rem; font-weight: 800; font-stretch: 112%; text-decoration: none; color: var(--braise); }
+.fiche dl { margin: 1.2rem 0 0; display: grid; gap: .8rem; }
+.fiche dt { font-size: .88rem; color: var(--acier); }
+.fiche dd { margin: 0; font-weight: 550; word-break: break-word; }
+
+/* --- Footer --- */
+footer { background: #0D1D2D; color: rgba(255,255,255,.75); font-size: .93rem; padding-block: 2.6rem 6rem; }
+footer .wrap { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 2rem; }
+footer strong { color: #fff; font-stretch: 125%; font-size: 1.1rem; }
+footer .petit { font-size: .82rem; color: rgba(255,255,255,.55); }
+footer .petit a { color: rgba(255,255,255,.7); }
+
+/* --- Mobile call bar --- */
+.barre { display: none; }
+
+/* --- Responsive --- */
+@media (max-width: 1000px) {
+  .nav a:not(.btn) { display: none; }
+  .services { grid-template-columns: repeat(2, 1fr); }
+  .aussi { grid-template-columns: repeat(2, 1fr); }
+  .aussi div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .hero .wrap, .rac .wrap, .confiance .wrap, .zone .wrap, .devis-grid { grid-template-columns: 1fr; }
+  .hero-photo { max-width: 460px; }
+  .hero-photo img { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 640px) {
+  .topbar .loin span:first-child { display: none; }
+  .galerie { grid-template-columns: 1fr 1fr; grid-template-rows: auto; height: auto; }
+  .galerie figure, .galerie figure:first-child, .galerie figure:last-child { grid-row: auto; grid-column: auto; aspect-ratio: 1 / 1; }
+  .galerie figure:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+  form { grid-template-columns: 1fr; }
+  footer .wrap { grid-template-columns: 1fr; }
+  .barre { display: grid; grid-template-columns: 1fr 1fr; position: fixed; inset: auto 0 0 0; z-index: 40; box-shadow: 0 -2px 14px rgba(0,0,0,.25); }
+  .barre a { padding: 1rem; text-align: center; font-weight: 700; text-decoration: none; }
+  .barre a:first-child { background: var(--braise); color: #fff; }
+  .barre a:last-child { background: var(--encre); color: #fff; }
+}
+@media (max-width: 460px) {
+  .nav .btn { display: none; }
+  .hero h1 { font-size: 2.05rem; }
+  .services, .aussi { grid-template-columns: 1fr; }
+  .aussi div + div { padding-left: 0; border-left: 0; }
+  .villes { columns: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- --- Top bar --- -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Du lundi au vendredi, 8 h - 17 h</span>
+    <span class="loin"><span>Génicourt-sur-Meuse</span><a href="tel:+33787788408">07 87 78 84 08</a></span>
+  </div>
+</div>
+
+<!-- --- Header --- -->
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2c1.6 5.2 7.5 8.4 7.5 15.2A7.5 7.5 0 0 1 8.5 17.2c0-3.6 2-5.6 3.6-7.6.3 2.6 1.4 4.2 3 4.9C14.6 10.6 15 6 16 2Z" fill="#E8661F"/><path d="M16 30a5 5 0 0 1-5-5c0-2.6 2-4 3.1-5.8.5 1.7 1.4 2.6 2.6 3 .2-1.5 1.3-2.6 2.3-3.7.9 1.6 2 3.6 2 5.6a5 5 0 0 1-5 5.9Z" fill="#13283D"/></svg>
+      Union Chauffage
+    </a>
+    <nav class="nav" aria-label="Menu principal">
+      <a href="#prestations">Prestations</a>
+      <a href="#reste-a-charge">Reste à charge</a>
+      <a href="#avis">Avis</a>
+      <a href="#zone">Zone</a>
+      <a class="btn btn-feu" href="#devis">Demander un devis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- --- Hero --- -->
+<section class="hero" aria-labelledby="titre" style="padding:0">
+  <div class="wrap">
+    <div>
+      <h1 id="titre">Un chauffage plus économique, posé par un artisan RGE de chez vous.</h1>
+      <p class="lead">Union Chauffage installe et entretient pompes à chaleur, chaudières à granulés et poêles autour de Génicourt-sur-Meuse. Pour remplacer une vieille chaudière fioul ou gaz, vous ne payez que le reste à charge.</p>
+      <div class="actions">
+        <a class="btn btn-feu" href="tel:+33787788408">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          07 87 78 84 08
+        </a>
+        <a class="btn btn-ligne" href="#devis">Demander un devis</a>
+      </div>
+      <ul class="preuves">
+        <li><b>RGE</b><span>QualiPAC et Qualibois</span></li>
+        <li><b>5/5</b><span>sur Google</span></li>
+        <li><b>60 km</b><span>autour de Génicourt</span></li>
+      </ul>
+    </div>
+    <div class="hero-photo">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/W%C3%A4rmepumpe_Au%C3%9Feneinheit.jpg?width=1280" alt="Unité extérieure de pompe à chaleur installée contre une maison" width="960" height="1200">
+    </div>
+  </div>
+</section>
+
+<!-- --- Reste à charge --- -->
+<section id="reste-a-charge" class="rac" aria-labelledby="t-rac">
+  <div class="wrap">
+    <div class="intro">
+      <h2 id="t-rac">Votre chaudière fioul ou gaz remplacée, vous ne payez que le reste à charge.</h2>
+      <p>Les aides auxquelles vous avez droit sont déduites directement de la facture : vous n'avancez pas leur montant.</p>
+      <a class="btn btn-encre" href="#devis" data-projet="Remplacement de chaudière fioul ou gaz">Savoir si j'y ai droit</a>
+    </div>
+    <ol class="etapes">
+      <li><div><h3>On vient voir votre installation</h3><p>Visite chez vous, conseil sur la solution adaptée à votre maison et devis détaillé.</p></div></li>
+      <li><div><h3>On s'occupe des dossiers d'aides</h3><p>En tant qu'artisan RGE, nous montons les demandes pour vous. Les aides sont déduites de la facture.</p></div></li>
+      <li><div><h3>On installe et on met en service</h3><p>Dépose de l'ancienne chaudière, pose du nouvel équipement, réglages et explications.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- --- Services --- -->
+<section id="prestations" aria-labelledby="t-prest">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="t-prest">Nos prestations</h2>
+      <p>De l'étude à l'entretien, un seul interlocuteur pour votre chauffage, votre eau chaude et votre salle de bain.</p>
+    </div>
+    <div class="services">
+      <article class="service">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Outunit_of_heat_pump.jpg?width=800" alt="Pompe à chaleur air/eau" loading="lazy">
+        <h3>Pompes à chaleur</h3>
+        <p>Pompes à chaleur air/eau pour remplacer une chaudière, et climatisation réversible.</p>
+        <span class="qualif">RGE QualiPAC</span>
+      </article>
+      <article class="service">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Okofen_wood_pellet_boiler.jpg?width=800" alt="Chaudière à granulés de bois en chaufferie" loading="lazy">
+        <h3>Chaudières à granulés et bois</h3>
+        <p>Chaudières biomasse automatiques, pour un chauffage central au bois sans corvée.</p>
+        <span class="qualif">RGE Qualibois</span>
+      </article>
+      <article class="service">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wasserf%C3%BChrender_Holzvergaserofen.jpg?width=800" alt="Poêle à bois moderne" loading="lazy">
+        <h3>Poêles à bois et à granulés</h3>
+        <p>Poêles et inserts, posés avec leur conduit, pour chauffer une pièce de vie ou toute la maison.</p>
+        <span class="qualif">RGE Qualibois</span>
+      </article>
+      <article class="service">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Modern_bathroom_design_featuring_shower_enclosure,_circular_mirror,_and_stylish_decor_in_a_small_space_renovation.jpg?width=800" alt="Salle de bain rénovée avec douche à l'italienne" loading="lazy">
+        <h3>Salles de bain clés en main</h3>
+        <p>Rénovation complète : plomberie, douche, sanitaires et finitions.</p>
+      </article>
+    </div>
+    <div class="aussi">
+      <div><h3>Chauffe-eau thermodynamique</h3><p>L'eau chaude produite avec jusqu'à trois fois moins d'électricité qu'un ballon classique.</p></div>
+      <div><h3>Adoucisseurs d'eau BWT</h3><p>Moins de calcaire dans vos canalisations, vos appareils et votre chaudière.</p></div>
+      <div><h3>Entretien des chaudières</h3><p>Bois, fioul ou gaz : entretien annuel, désembouage, plancher chauffant.</p></div>
+      <div><h3>Dépannage</h3><p>Une panne de chauffage ? Appelez-nous, on vous dit vite quand on peut passer.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- --- RGE + reviews --- -->
+<section id="avis" class="confiance" aria-labelledby="t-rge">
+  <div class="wrap">
+    <div>
+      <h2 id="t-rge">Un artisan RGE : vos aides sont possibles</h2>
+      <p style="margin-top:1rem;color:var(--acier);font-size:1.1rem">Les aides de l'État pour changer de chauffage ne sont accordées que si les travaux sont faits par une entreprise RGE (Reconnue Garante de l'Environnement). Union Chauffage l'est pour les pompes à chaleur et le chauffage au bois.</p>
+      <div class="labels">
+        <div class="label"><span class="pastille">Quali<br>PAC</span><div><h3>QualiPAC</h3><p>Pompes à chaleur et chauffe-eau thermodynamiques.</p></div></div>
+        <div class="label"><span class="pastille">Quali<br>bois</span><div><h3>Qualibois</h3><p>Chaudières, poêles et inserts au bois ou aux granulés.</p></div></div>
+      </div>
+    </div>
+    <div class="note">
+      <div class="chiffre"><b>5/5</b><span>sur Google</span></div>
+      <div class="etoiles" aria-label="5 étoiles sur 5">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.6 7.2.7-5.4 4.8 1.6 7.1L12 17.5 5.6 21.2l1.6-7.1L1.8 9.3 9 8.6z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.6 7.2.7-5.4 4.8 1.6 7.1L12 17.5 5.6 21.2l1.6-7.1L1.8 9.3 9 8.6z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.6 7.2.7-5.4 4.8 1.6 7.1L12 17.5 5.6 21.2l1.6-7.1L1.8 9.3 9 8.6z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.6 7.2.7-5.4 4.8 1.6 7.1L12 17.5 5.6 21.2l1.6-7.1L1.8 9.3 9 8.6z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.6 7.2.7-5.4 4.8 1.6 7.1L12 17.5 5.6 21.2l1.6-7.1L1.8 9.3 9 8.6z"/></svg>
+      </div>
+      <blockquote>« Travail minutieux et propre. »<cite>Avis client publié sur Obat</cite></blockquote>
+      <a class="btn btn-ligne" href="https://www.google.com/search?q=Union+Chauffage+G%C3%A9nicourt-sur-Meuse+avis" target="_blank" rel="noopener">Lire les avis sur Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- --- Projects --- -->
+<section id="chantiers" aria-labelledby="t-chantiers">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="t-chantiers">Nos chantiers</h2>
+      <p>Pompes à chaleur, poêles, chaudières, salles de bain : un aperçu de ce que nous installons.</p>
+    </div>
+    <div class="galerie">
+      <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%A9marrer_un_feu_un_po%C3%AAle_%C3%A0_bois.jpg?width=1280" alt="Feu dans un poêle à bois" loading="lazy"><figcaption>Poêle à bois</figcaption></figure>
+      <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Heat_pump_on_a_wall.jpg?width=800" alt="Pompe à chaleur fixée en façade" loading="lazy"><figcaption>Pompe à chaleur</figcaption></figure>
+      <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pellet_stove_flame.jpg?width=800" alt="Flamme d'un poêle à granulés" loading="lazy"><figcaption>Poêle à granulés</figcaption></figure>
+      <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Danfoss_thermostatic_radiator_valve.jpg?width=1280" alt="Robinet thermostatique sur un radiateur" loading="lazy"><figcaption>Entretien et réglage</figcaption></figure>
+    </div>
+    <p class="galerie-note">Photos d'exemple, à remplacer par vos propres chantiers.</p>
+  </div>
+</section>
+
+<!-- --- Zone --- -->
+<section id="zone" class="zone" style="background:var(--givre)" aria-labelledby="t-zone">
+  <div class="wrap">
+    <svg class="carte" viewBox="-74 -68 148 136" role="img" aria-labelledby="carte-titre">
+      <title id="carte-titre">Zone d'intervention : 60 km autour de Génicourt-sur-Meuse</title>
+      <defs>
+        <radialGradient id="chaleur">
+          <stop offset="0" stop-color="#EE7C2E" stop-opacity=".55"/>
+          <stop offset=".45" stop-color="#F7C47E" stop-opacity=".35"/>
+          <stop offset="1" stop-color="#A9D3E8" stop-opacity=".15"/>
+        </radialGradient>
+      </defs>
+      <circle r="60" fill="url(#chaleur)"/>
+      <g fill="none" stroke="#13283D" stroke-opacity=".28" stroke-width=".35" stroke-dasharray="1.4 1.4">
+        <circle r="20"/><circle r="40"/><circle r="60"/>
+      </g>
+      <path d="M24,66 C17,52 12,38 11.2,30.3 S8.6,21 7.5,16.4 S1.5,5 0,0 S-3,-9 -3.9,-13.6 S-9,-33 -18.3,-50.3 S-25,-62 -28,-68" fill="none" stroke="#4C93C2" stroke-width="1.3" stroke-linecap="round"/>
+      <text x="-12" y="-36" font-size="3.4" fill="#2E6F99" font-style="italic" transform="rotate(-62 -12 -36)">La Meuse</text>
+      <g font-size="3" fill="#13283D" fill-opacity=".6" text-anchor="middle">
+        <text x="0" y="24.5">20 km</text><text x="0" y="44.5">40 km</text><text x="0" y="64.5">60 km</text>
+      </g>
+      <g fill="#13283D" font-size="3.9">
+        <circle cx="-3.9" cy="-13.6" r="1.1"/><text x="-1.6" y="-12.6">Verdun</text>
+        <circle cx="7.5" cy="16.4" r="1.1"/><text x="9.8" y="17.6">Saint-Mihiel</text>
+        <circle cx="11.2" cy="30.3" r="1.1"/><text x="13.5" y="31.5">Commercy</text>
+        <circle cx="-20.3" cy="29.2" r="1.1"/><text x="-22.6" y="30.4" text-anchor="end">Bar-le-Duc</text>
+        <circle cx="14.8" cy="-19.5" r="1.1"/><text x="17.1" y="-18.3">Étain</text>
+        <circle cx="13.4" cy="-7.3" r="1.1"/><text x="15.7" y="-6.1">Fresnes-en-Woëvre</text>
+        <circle cx="45" cy="14.5" r="1.1"/><text x="45" y="20.3" text-anchor="middle">Pont-à-Mousson</text>
+        <circle cx="53.8" cy="-9.1" r="1.1"/><text x="53.8" y="-12.3" text-anchor="middle">Metz</text>
+        <circle cx="33.1" cy="40" r="1.1"/><text x="35.4" y="41.2">Toul</text>
+        <circle cx="-8.2" cy="38.5" r="1.1"/><text x="-10.5" y="39.7" text-anchor="end">Ligny-en-Barrois</text>
+        <circle cx="-26.8" cy="-7.8" r="1.1"/><text x="-26.8" y="-10.8" text-anchor="middle">Clermont-en-Argonne</text>
+        <circle cx="-18.3" cy="-50.3" r="1.1"/><text x="-16" y="-49.1">Stenay</text>
+        <circle cx="32.1" cy="-13.5" r="1.1"/><text x="34.4" y="-12.3">Jarny</text>
+      </g>
+      <circle r="3.2" fill="#C9480A" stroke="#fff" stroke-width="1"/>
+      <text x="0" y="8.4" font-size="4.4" font-weight="800" text-anchor="middle" fill="#13283D">Génicourt-sur-Meuse</text>
+    </svg>
+    <div>
+      <h2 id="t-zone">On intervient à 60 km autour de Génicourt-sur-Meuse</h2>
+      <p style="margin-top:1rem;color:var(--acier);font-size:1.1rem">De Verdun à Commercy, de Bar-le-Duc à Metz : toute la vallée de la Meuse et ses environs.</p>
+      <ul class="villes">
+        <li>Verdun</li><li>Saint-Mihiel</li><li>Commercy</li><li>Bar-le-Duc</li><li>Étain</li><li>Fresnes-en-Woëvre</li><li>Pont-à-Mousson</li><li>Metz</li><li>Toul</li><li>Ligny-en-Barrois</li>
+      </ul>
+      <img class="eglise" src="https://commons.wikimedia.org/wiki/Special:FilePath/G%C3%A9nicourt-sur-Meuse_L'%C3%A9glise_Sainte-Marie-Madeleine.JPG?width=960" alt="L'église Sainte-Marie-Madeleine de Génicourt-sur-Meuse" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- --- Quote request --- -->
+<section id="devis" class="devis" aria-labelledby="t-devis">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="t-devis">Demander un devis</h2>
+      <p>Décrivez votre projet en quelques mots : votre demande s'ouvre dans votre messagerie, prête à être envoyée. Nous vous rappelons rapidement.</p>
+    </div>
+    <div class="devis-grid">
+      <form id="form-devis" novalidate>
+        <label>Nom<input type="text" name="nom" autocomplete="name" required></label>
+        <label>Téléphone<input type="tel" name="tel" autocomplete="tel" required></label>
+        <label>Commune<input type="text" name="commune" autocomplete="address-level2" placeholder="ex. Saint-Mihiel"></label>
+        <label>Votre projet
+          <select name="projet">
+            <option>Pompe à chaleur</option>
+            <option>Remplacement de chaudière fioul ou gaz</option>
+            <option>Chaudière à granulés ou bois</option>
+            <option>Poêle à bois ou à granulés</option>
+            <option>Chauffe-eau thermodynamique</option>
+            <option>Salle de bain</option>
+            <option>Adoucisseur d'eau</option>
+            <option>Climatisation</option>
+            <option>Entretien ou dépannage</option>
+            <option>Autre</option>
+          </select>
+        </label>
+        <label class="large">Votre message<textarea name="message" placeholder="Type de logement, chauffage actuel, surface, délai souhaité…"></textarea></label>
+        <div class="envoi">
+          <button class="btn btn-feu" type="submit">Préparer ma demande</button>
+          <span class="statut" id="statut" role="status"></span>
+        </div>
+      </form>
+      <aside class="fiche" aria-labelledby="t-fiche">
+        <h3 id="t-fiche">Union Chauffage</h3>
+        <a class="tel" href="tel:+33787788408">07 87 78 84 08</a>
+        <dl>
+          <dt>E-mail</dt><dd><a href="mailto:marche.union@gmail.com">marche.union@gmail.com</a></dd>
+          <dt>Adresse</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=7+rue+de+la+Fontaine+55320+G%C3%A9nicourt-sur-Meuse" target="_blank" rel="noopener">7 rue de la Fontaine<br>55320 Génicourt-sur-Meuse</a></dd>
+          <dt>Horaires</dt><dd>Du lundi au vendredi, 8 h - 17 h</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- --- Footer --- -->
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>Union Chauffage</strong>
+      <p style="margin-top:.4rem">Chauffage, sanitaire et énergies renouvelables.<br>7 rue de la Fontaine, 55320 Génicourt-sur-Meuse</p>
+    </div>
+    <div>
+      <p>07 87 78 84 08<br>marche.union@gmail.com<br>Du lundi au vendredi, 8 h - 17 h</p>
+    </div>
+    <div class="petit">
+      <p>EURL Union Chauffage. Mentions légales : SIRET et gérant à compléter.</p>
+      <p style="margin-top:.5rem">Photos d'illustration : Wikimedia Commons, sous licences libres (<a href="https://commons.wikimedia.org/wiki/File:W%C3%A4rmepumpe_Au%C3%9Feneinheit.jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Outunit_of_heat_pump.jpg">2</a>, <a href="https://commons.wikimedia.org/wiki/File:Okofen_wood_pellet_boiler.jpg">3</a>, <a href="https://commons.wikimedia.org/wiki/File:Wasserf%C3%BChrender_Holzvergaserofen.jpg">4</a>, <a href="https://commons.wikimedia.org/wiki/File:Modern_bathroom_design_featuring_shower_enclosure,_circular_mirror,_and_stylish_decor_in_a_small_space_renovation.jpg">5</a>, <a href="https://commons.wikimedia.org/wiki/File:D%C3%A9marrer_un_feu_un_po%C3%AAle_%C3%A0_bois.jpg">6</a>, <a href="https://commons.wikimedia.org/wiki/File:Heat_pump_on_a_wall.jpg">7</a>, <a href="https://commons.wikimedia.org/wiki/File:Pellet_stove_flame.jpg">8</a>, <a href="https://commons.wikimedia.org/wiki/File:Danfoss_thermostatic_radiator_valve.jpg">9</a>, <a href="https://commons.wikimedia.org/wiki/File:G%C3%A9nicourt-sur-Meuse_L'%C3%A9glise_Sainte-Marie-Madeleine.JPG">10</a>).</p>
+      <p style="margin-top:.5rem">Site réalisé par Gabriel Fernandes Neves.</p>
+    </div>
+  </div>
+</footer>
+
+<nav class="barre" aria-label="Contact rapide">
+  <a href="tel:+33787788408">Appeler</a>
+  <a href="#devis">Devis</a>
+</nav>
+
+<script>
+// --- Quote request --- \\
+const form = document.getElementById('form-devis');      // quote form
+const statut = document.getElementById('statut');        // status line under the button
+const MAIL = 'marche.union@gmail.com';                   // where requests go
+
+// "Savoir si j'y ai droit" preselects the boiler replacement project
+document.querySelectorAll('[data-projet]').forEach(link => {
+  link.addEventListener('click', () => { form.projet.value = link.dataset.projet; });
+});
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  if (!form.nom.value.trim() || !form.tel.value.trim()) {
+    statut.textContent = 'Indiquez votre nom et votre téléphone pour être rappelé.';
+    (form.nom.value.trim() ? form.tel : form.nom).focus();
+    return;
+  }
+  const message = form.message.value.trim();             // optional free text
+  const commune = form.commune.value.trim();             // optional town
+  const corps = [                                        // email body
+    'Bonjour,', '',
+    `Je souhaite un devis pour : ${form.projet.value}.`,
+    ...(message ? ['', message] : []),
+    '',
+    `Nom : ${form.nom.value.trim()}`,
+    `Téléphone : ${form.tel.value.trim()}`,
+    ...(commune ? [`Commune : ${commune}`] : []),
+    '', 'Merci.'
+  ].join('\n');
+  const sujet = `Demande de devis - ${form.projet.value}`;
+  window.location.href = `mailto:${MAIL}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
+  statut.textContent = 'Votre messagerie s\'ouvre avec la demande prête à envoyer.';
+});
+</script>
+</body>
+</html>
